@@ -81,7 +81,7 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({imageUrl : this.state.input}); 
 
-    fetch("https://api.clarifai.com/v2/models/" + "face-detection" + "/outputs", this.getRequestOptions(this.state.input))
+    fetch("https://api.clarifai.com/v2/models/face-detection/outputs", this.getRequestOptions(this.state.input))
     .then(response => response.json())
     .then(result => {
         this.displayFaceBox(this.calculateFaceLocation(result));
